@@ -28,7 +28,11 @@ func main() {
 	var headings, row []string
 	var ibovRT IbovRT
 
+	log.Println("Iniciando Analise")
+
 	ibovRT.Carteira = make(map[string]AtivoIbov)
+
+	log.Println("Lendo Doc")
 
 	doc, err := goquery.NewDocument("http://bvmf.bmfbovespa.com.br/indices/ResumoCarteiraTeorica.aspx?Indice=IBOV&amp;idioma=pt-br&idioma=pt-br") //  NewDocumentFromReader(strings.NewReader(resp.Body))
 	if err != nil {
